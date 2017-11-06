@@ -20,7 +20,7 @@ jQuery(function($) {
       handler: function(event, direction) {
         
         if (direction == 'down') {
-          if (matchMedia('only screen and (min-width: 1000px)').matches) {
+          if (matchMedia('only screen and (min-width: 320px)').matches) {
             nav_container.css({ 'height':nav.outerHeight() });    
             nav.stop().addClass("sticky").css("top",-nav.outerHeight()).animate({"top":top_spacing});
           }
