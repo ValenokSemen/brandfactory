@@ -48,7 +48,24 @@ var widgets = {
         }
 };
 
+//Contact Submit Button Disable
+(function() {
+    $('form input').change(function() {
 
+        var value = false;
+        $('form input[type="text"]').each(function() {
+          if ($(this).val() == '') {
+            value = true;
+          }
+        });
+
+        if (value) {
+          $('input[type=submit]').attr('disabled', 'disabled');
+        } else {
+          $('input[type=submit]').removeAttr('disabled');
+        }
+    });
+})()
 
 
 /* Tabs */
@@ -114,6 +131,8 @@ jQuery('.bxslider').bxSlider({
 $(document).ready(function() {
     $('a').nivoLightbox();
 });
+
+
 /* Bootstrap Datepicker*/
 $('#datepicker-container .input-group.date').datepicker({
     format: "dd.mm.yyyy",

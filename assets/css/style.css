@@ -363,7 +363,9 @@ nav {
   color: #fff;
   position: absolute;
   top: -26px;
-  left: 26px;
+  left: 0px;
+    right: 0px;
+    padding-left: 26px;
 }
 
 .menu ul li:hover ul {
@@ -564,6 +566,10 @@ header .nav_wrapper {
 }
 .promo-name.dark {
     color:#fff;
+}
+
+.promo-name.darkred {
+    color:#651c36;
 }
 .promo-border {
     width: 204px;
@@ -4487,4 +4493,18 @@ select {
 .input-group-addon{
     color: #FFF;
     cursor: pointer;
+}
+
+button[disabled], html input[disabled] {
+    color: #6e6d6d;
+}
+
+
+.form-horizontal label.notificated {
+    position: absolute;
+    top: 14px;
+    right: 50px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 300;
 }
