@@ -3077,7 +3077,7 @@ blockquote .small { margin-top: 5px }
 font-size: 17px;padding: 10px 0;
     font-weight: 400;}
 .contact-block {padding-left: 10px !important;}
-.contact-block button{
+.contact-block span{
   border: none;
   position: absolute;
   right: 30px;
@@ -3094,7 +3094,6 @@ font-size: 17px;padding: 10px 0;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  color: #fff;
 }
 .contact-footer li i{ color: #fff }
 .btn-contact {
@@ -4457,4 +4456,35 @@ input[type="checkbox"].styled:checked + label:after{
 
 .form-group {
     margin-bottom: 0px;
+}
+
+.form-horizontal input.error, .form-horizontal textarea.error, .form-horizontal select.error {
+    border: 3px solid #f03838;
+    display: inline-block;
+}
+
+.form-horizontal label.error {
+    display: none !important;
+}
+
+
+select {
+    position: relative;
+    width: 100%;
+    color: #222222;
+    background-color: #fff !important;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.input-group{
+    display: block;
+}
+
+.input-group-addon{
+    color: #FFF;
+    cursor: pointer;
 }

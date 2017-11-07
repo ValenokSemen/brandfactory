@@ -48,6 +48,9 @@ var widgets = {
         }
 };
 
+
+
+
 /* Tabs */
 jQuery('.shortcode_tabs').each(function(index) {
     var i = 1;
@@ -111,7 +114,11 @@ jQuery('.bxslider').bxSlider({
 $(document).ready(function() {
     $('a').nivoLightbox();
 });
-/* Video Parallax */
+/* Bootstrap Datepicker*/
+$('#datepicker-container .input-group.date').datepicker({
+    format: "dd.mm.yyyy",
+    autoclose: true
+});
 
 /* Portfolio & Portfolio Filter */
 $(window).load(function() {
@@ -144,4 +151,56 @@ $(window).load(function() {
 jQuery(document).ready(onReady.init);
 jQuery(window).load(onLoad.init);
 
+
+//Contact Form Validation
+function contactFormValidation () {
+  if($('.form-horizontal').length){
+    $('.form-horizontal').validate({ // initialize the plugin
+      rules: {
+        insurance: {
+            required: true
+        },
+        tenderid: {
+            required: true,
+            digits: true
+        },
+        contractprice: {
+            required: true,
+            max: 100000000000
+        },
+        garant: {
+            required: false,
+            max: 20000
+        },
+        date: {
+            required: true,
+        }
+      },
+      submitHandler: function(form) {
+                $(form).ajaxSubmit({
+                    success: function() {
+                        $('.form-horizontal :input').attr('disabled', 'disabled');
+                        $('.form-horizontal').fadeTo( "slow", 1, function() {
+                            $(this).find(':input').attr('disabled', 'disabled');
+                            $(this).find('label').css('cursor','default');
+                            $('#success').fadeIn();
+                        });
+                    },
+                    error: function() {
+                        $('.form-horizontal').fadeTo( "slow", 1, function() {
+                            $('#error').fadeIn();
+                        });
+                    }
+                });
+            }
+        });
+  }
+}
+
+// DOM ready function
+jQuery(document).on('ready', function() {
+    (function ($) {
+      contactFormValidation ();
+  })(jQuery);
+});
 });
