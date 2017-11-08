@@ -134,6 +134,24 @@ input[type="submit"] {
 button{
     font-family: 'Tahoma', Verdana, Segoe, sans-serif;
 }
+
+select {
+    position: relative;
+    width: 100%;
+    color: #222222;
+    background-color: #fff !important;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+button[disabled], html input[disabled] {
+    color: #6e6d6d;
+}
+
+
 h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
     font-family: 'Roboto Slab', Open Sans, sans-serif;
     font-weight: 300;
@@ -4474,17 +4492,7 @@ input[type="checkbox"].styled:checked + label:after{
 }
 
 
-select {
-    position: relative;
-    width: 100%;
-    color: #222222;
-    background-color: #fff !important;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-}
+
 
 .input-group{
     display: block;
@@ -4492,12 +4500,14 @@ select {
 
 .input-group-addon{
     color: #FFF;
+    cursor: default;
+}
+
+#datepicker-container span.input-group-addon{
     cursor: pointer;
 }
 
-button[disabled], html input[disabled] {
-    color: #6e6d6d;
-}
+
 
 
 .form-horizontal label.notificated {
