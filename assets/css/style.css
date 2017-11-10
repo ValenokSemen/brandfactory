@@ -4482,15 +4482,22 @@ input[type="checkbox"].styled:checked + label:after{
     margin-bottom: 0px;
 }
 
-.form-horizontal input.error, .form-horizontal textarea.error, .form-horizontal select.error {
+/*.form-horizontal input.error, .form-horizontal textarea.error, .form-horizontal select.error {
     border: 3px solid #f03838;
     display: inline-block;
-}
+}*/
 
-.form-horizontal label.error {
+/*.form-horizontal label.error {
     display: none !important;
+}*/
+
+.checkbox label.error{
+    display: block;
 }
 
+.checkbox label.error:before {
+    border: 2px solid #f03838;
+}
 
 
 
@@ -4517,4 +4524,15 @@ input[type="checkbox"].styled:checked + label:after{
     color: #fff;
     font-size: 14px;
     font-weight: 300;
+}
+
+
+#result div.success {
+    padding: 13px 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    width: 50%;
+    margin: 20px auto;
+    display: block;
 }

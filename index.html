@@ -301,15 +301,15 @@
       <div class="marg60">
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
-            <form action="assets/php/send.php" method="post" id="contactForm" class="form-horizontal">
+            <form id="contactForm" class="form-horizontal">
               <fieldset>
                 <div class="form-group">
                   <label class="col-md-5 control-label text-promo dark" for="insurance">Вариант страхового покрытия</label>
                   <div class="col-md-7 contact-block"> 
 
                     <select class="input-cont-textarea" name="insurance" title="Please select something!">
-                      <option value="">Выбрать...</option>
-                      <option value="1">Только гражданская ответственность</option>
+                      <option value="default">Выбрать...</option>
+                      <option value="Гражданская ответственность">Только гражданская ответственность</option>
                     </select>
 
                   </div>
@@ -319,8 +319,9 @@
                   <label class="col-md-5 control-label text-promo dark" for="tenderid">ID тендера</label>
                   <div class="col-md-7 contact-block"> 
 
-                    <input type="text" name="tenderid" placeholder="ID тендера" class="input-cont-textarea">
-                    
+                    <input id="tenderid" type="text" name="tenderid" placeholder="ID тендера" class="input-cont-textarea">
+                    <span class="help-block text-danger"></span>
+                   
                   </div>
                 </div>
 
@@ -359,12 +360,13 @@
                 <div class="form-group">
                   <label class="col-md-5 checkbox-label text-promo dark" for="agree">Я согласен/согласна на обработку моих персональных данных</label>
                   <div class="col-md-7 checkbox"> 
-                    <input type="checkbox" name="agree" class="styled" id="singleCheckBox" value="option1" aria-lable="SingleCheckBox">
+                    <input type="checkbox" name="agree" class="styled" id="singleCheckBox" value="" aria-lable="SingleCheckBox">
                     <label></label>
                   </div>
                 </div>
 
                 <div class="row marg30">
+                  <div class="col-lg-12"><div id="result"></div></div>
                   <div class="col-lg-12">
                     <div class="cbp-l-filters-button button-group" style="display:table;margin:auto;">
                       <input type="submit" id="send" class="button btn-pioner-gradient btn-lg" data-filter=".envato" value="Отправить заявку" disabled="disabled" />
@@ -435,7 +437,6 @@
 <script type="text/javascript" src="assets/js/sticky.js"></script>
 <script type="text/javascript" src="assets/js/easypiechart.js"></script>
 <script type="text/javascript" src="assets/js/appear_plugin.js"></script>
-<script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="assets/js/bootstrap-datepicker.min.js"></script>
 
 <script type="text/javascript" src="assets/js/main.js"></script>
