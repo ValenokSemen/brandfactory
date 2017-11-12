@@ -4,32 +4,42 @@
 @import "jcarousel.responsive.css";
 @import "icons.css";
 @import "simple-icons.css";
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic);
-@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700);
+/*@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700);*/
+
 
 @font-face {
     font-family: 'MagistralC';
-    src:url('../fonts/MagistralC.ttf') format('truetype');
+    src: url("../fonts/MagistralC.eot"); /* IE9*/
+    src: url("../fonts/MagistralC.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url('../fonts/MagistralC.otf') format('opentype'),
+    url('../fonts/MagistralC.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'MagistralCBold';
-    src:url('../fonts/MagistralC-Bold.otf') format('opentype');
+    src: url("../fonts/MagistralC-Bold.eot"); /* IE9*/
+    src: url("../fonts/MagistralC-Bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */ 
+    url('../fonts/MagistralC-Bold.ttf') format('truetype'),
+    url('../fonts/MagistralC-Bold-Bold.otf') format('opentype');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'MyriadPro';
-    src:url('../fonts/MyriadPro-Regular.otf') format('opentype');
+    src: url("../fonts/MyriadPro-Regular.eot"); /* IE9*/
+    src: url("../fonts/MyriadPro-Regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */ 
+    url('../fonts/MyriadPro-Regular.ttf') format('truetype'),
+    url('../fonts/MyriadPro-Regular.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
 *::-webkit-input-placeholder { /* Chrome */
-  color: white;
+  color: rgba(255, 255, 255, 0.25);
   transition: opacity 250ms ease-in-out;
   font-family: Tahoma,Verdana,Segoe,sans-serif;
 }
@@ -38,7 +48,7 @@
 
 }
 *:-ms-input-placeholder { /* IE 10+ */
-  color: white;
+  color: rgba(255, 255, 255, 0.25);
   transition: opacity 250ms ease-in-out;
   font-family: Tahoma,Verdana,Segoe,sans-serif;
 }
@@ -46,7 +56,7 @@
   opacity: 0.5;
 }
 *::-moz-placeholder { /* Firefox 19+ */
-  color: white;
+  color: rgba(255, 255, 255, 0.25);
   opacity: 1;
   transition: opacity 250ms ease-in-out;
   font-family: Tahoma,Verdana,Segoe,sans-serif;
@@ -55,7 +65,7 @@
   opacity: 0.5;
 }
 *:-moz-placeholder { /* Firefox 4 - 18 */
-  color: white;
+  color: rgba(255, 255, 255, 0.25);
   opacity: 1;
   transition: opacity 250ms ease-in-out;
   font-family: Tahoma,Verdana,Segoe,sans-serif;
@@ -326,8 +336,8 @@ nav {
     box-shadow: 0 3px 5px rgba(0,0,0,.1);
 }
 
-.menu ul ul { width: 230px !important }
-.menu ul ul li {width: 230px;/*margin: 0px;*/ padding: 0px;}
+.menu ul ul { width: 240px !important }
+.menu ul ul li {width: 240px;/*margin: 0px;*/ padding: 0px;}
 .menu ul li.sub li {
     width: 140px;
     border-left: 1px dotted #eee;
@@ -412,27 +422,26 @@ nav {
     font-size: 18px;
     display: block;
     transition: border 0.15s linear;
-    text-transform: uppercase;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: MyriadPro;
 }
 
-.menu ul li a:before {
+.menu ul li.current-menu-item > a:before {
  -webkit-transition: width .3s linear, left .3s linear, border-color .3s linear;
  transition: width .3s linear, left .3s linear, border-color .3s linear;
  position: absolute;
  display: block;
  top: 0px;
- left: 50%;
- width: 0;
+ left: 0;
+ width: 100%;
  border-top: 9px solid #EC0B5B;
  content: '';
  padding-bottom: inherit;
 
 }
-.menu ul li a:hover:before {
+/*.menu ul li a:hover:before {
     width: 100%;
     left: 0;
 }
@@ -498,7 +507,7 @@ nav {
     border-top: 1px solid rgba(255,255,255,0.07);
     color: #000 !important;
     font-weight: normal;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 300;
     -webkit-backface-visibility: hidden;
     text-transform: none;
@@ -512,6 +521,7 @@ nav {
 .sticky .menu ul li ul li a {
     padding: 5px 20px;
     line-height: 1.75;
+    font-size: 14px;
 }
 .menu ul li ul li a:hover {
     border-top: 1px solid rgba(255,255,255,0.1);
@@ -579,7 +589,7 @@ header .nav_wrapper {
 .promo-name{
     text-align: center;
     font-size: 36px;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
     font-family: MagistralC;
 }
 .promo-name.dark {
@@ -1126,7 +1136,13 @@ figure p {
     background-size: cover;
 }
 
-.prlx-w-opacity .opacity {
+.prlx-w-opacity-sec {
+    background: url(../images/slider_build-second.jpg) 50% 50% repeat fixed;
+    color: #fff;
+    background-size: cover;
+}
+
+.prlx-w-opacity .opacity, .prlx-w-opacity-sec .opacity {
     padding: 80px 0;
     background: rgba(33,58,96,0.8);
     width:100%;
@@ -1284,7 +1300,12 @@ figure p {
   background-size: cover;
 }
 
-.page-in .overlay {
+.page-in-2 {
+  background: url(../images/slider_build_one-second.jpg) 50% 50% repeat fixed;
+  background-size: cover;
+}
+
+.page-in .overlay, .page-in-2 .overlay  {
   width: 100%;
   height: 100%;
   background: rgba(33,58,96,0.8);
@@ -1731,6 +1752,7 @@ figure p {
   font-family: MagistralCBold;
   font-size: 18px;
   color: #651c36;
+  line-height: 23px;
 }
 /*------------------------------------------------------------------
 [5.0 Widgets/ Button]
@@ -2587,9 +2609,9 @@ padding-top: 0px;
 }
 .btn-pioneer {
     outline: none;
-    background-color: #fff;
-    border: 1px solid #EC0B5B;
-    background: #EC0B5B;
+    /*background-color: #fff;*/   
+    border: 2px solid #fff;
+    background: transparent;
     -webkit-transition: all 0.25s linear;
     -moz-transition: all 0.25s linear;
     -o-transition: all 0.25s linear;
@@ -2616,7 +2638,7 @@ padding-top: 0px;
     -moz-transition: all 0.25s linear;
     -o-transition: all 0.25s linear;
     transition: all 0.25s linear;
-    color:#EC0B5B;
+    color:#fff;
 }
 .btn-pioneer a:hover {
     background: transparent;
@@ -3410,19 +3432,20 @@ font-size: 17px;padding: 10px 0;
     margin-bottom: 30px;
     font-family: MagistralC;
     line-height: 1.25;
+    text-transform: uppercase;
 }
 
 .small-title.dark{
     color:#fff;
 }
-.small-title:before {
+/*.small-title:before {
     content: "";
     position: absolute;
     width: 40px;
     height: 2px;
     background-color: #EC0B5B;
     bottom: -10px;
-}
+}*/
 
 .about-us-title {
     font-size: 23px;
@@ -4037,6 +4060,7 @@ figure.effect-bubba:hover p {
 .present-block-name {
     font-family: MagistralCBold;
     font-size: 77px;
+    text-transform: uppercase;
 }
 
 .present-block-name.dark {
