@@ -156,6 +156,9 @@ $(document).ready(function(){
         var contractprice = $('input[name=contractprice]').val();
         var garant = $('input[name=garant]').val();
         var date = $('input[name=date]').val();
+        var phone = $('input[name=phone]').val();
+        var name = $('input[name=name]').val().trim();
+
         // var agree = $("input[type='checkbox']").is(':checked');
         
         //simple validation at client's end
@@ -186,6 +189,19 @@ $(document).ready(function(){
             $('select[name="date"]').css('border-color', '#e41919');
             proceed = false;
         }
+
+        var regExp = /^\+7\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}$/;
+        if (!(phone.match(regExp))) {
+            $('input[name="phone"]').css('border-color', '#e41919');
+            proceed = false;
+        } ;
+        
+        var regExp = /^[А-Я][а-яА-Я\-]{0,}\s[А-Я][а-яА-Я\-]{1,}(\s[А-Я][а-яА-Я\-]{1,})?$/;
+        if (!(name.match(regExp))) {
+            $('input[name="name"]').css('border-color', '#e41919');
+            proceed = false;
+        } ;
+
 
         
         // everything looks good! proceed...
