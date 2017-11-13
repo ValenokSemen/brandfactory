@@ -4075,6 +4075,7 @@ figure.effect-bubba:hover p {
 }
 .present-block-text {
     padding-top:15px;
+    line-height: 26px;
 }
 
 .present-block-text.dark{
