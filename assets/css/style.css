@@ -444,9 +444,10 @@ nav {
 /*.menu ul li a:hover:before {
     width: 100%;
     left: 0;
-}
+}*/
+
 .menu ul ul li.current a:before {
-/*     -webkit-transition: width .3s linear, left .3s linear, border-color .3s linear;
+/*    -webkit-transition: width .3s linear, left .3s linear, border-color .3s linear;
     transition: width .3s linear, left .3s linear, border-color .3s linear;
     bottom: 0;
     left: 50%;
