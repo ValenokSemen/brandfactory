@@ -330,4 +330,13 @@ jQuery(window).load(onLoad.init);
 // });
 
 
+ jQuery(document).ready(function($){
+    /* @normal masking rules 
+    ---------------------------------------------------------- */
+    $.mask.definitions['f'] = "[A-Fa-f0-9]";    
+    $("#phone").mask('+7 (999) 999-99-99', {placeholder:'_'});
+    $("#date2").mask('99.99.9999', {placeholder:"ДД.ММ.ГГГГ"});    
+});             
+
+
 });
