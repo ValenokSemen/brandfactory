@@ -355,7 +355,7 @@ nav {
     /*margin: 0px 25px;*/
     padding: 30px 60px;
     display: inline-block;
-}
+    cursor: pointer;
 }
 
 .menu ul > li:last-child {
@@ -378,13 +378,13 @@ nav {
     -o-transition: all 0.2s linear;
     transition: all 0.2s linear;
     margin-top: 10px;
-    z-index: 9;
+    cursor: auto;
     padding: 30px 0;
     left: 0;
 }
 
 
-.menu ul li ul:before {
+/*.menu ul li ul:before {
   content: '';
   font-family: FontAwesome;
   font-size: 25px;
@@ -394,8 +394,30 @@ nav {
   left: 0px;
     right: 0px;
     padding-left: 26px;
-}
+}*/
 
+
+.menu ul li ul:before {
+    position: absolute;
+    left: 0;
+    top: -10px;
+    width: 100%;
+    content: "";
+    height: 10px;
+}
+.menu ul li ul:after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent white transparent;
+    position: absolute;
+    left: calc(17% - 15px);
+    left: -webkit-calc(17% - 15px);
+    top: -10px;
+}
 .menu ul li:hover ul {
     display: inline-block;
     visibility: visible;
