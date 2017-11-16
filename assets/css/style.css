@@ -28,15 +28,15 @@
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'MyriadPro';
-    src: url("../fonts/MyriadPro-Regular.eot"); /* IE9*/
-    src: url("../fonts/MyriadPro-Regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */ 
-    url('../fonts/MyriadPro-Regular.ttf') format('truetype'),
-    url('../fonts/MyriadPro-Regular.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
+    @font-face {
+            font-family: "MyriadProRegular";
+            src: url("../fonts/MyriadProRegular.eot");
+            src: url("../fonts/MyriadProRegular.eot?#iefix")format("embedded-opentype"),
+            url("../fonts/MyriadProRegular.woff") format("woff"),
+            url("../fonts/MyriadProRegular.ttf") format("truetype");
+            font-style: normal;
+            font-weight: normal;
+    }
 
 *::-webkit-input-placeholder { /* Chrome */
   color: rgba(255, 255, 255, 0.25);
@@ -418,13 +418,7 @@ nav {
     left: -webkit-calc(17% - 15px);
     top: -10px;
 }
-.menu ul li:hover ul {
-    display: inline-block;
-    visibility: visible;
-    top: 50%;
-    opacity: 1;
-   /* margin-top: 3px;*/
-}
+
 .menu ul li:hover ul,
 .menu ul li li:hover ul,
 .menu ul li li li:hover ul {
@@ -447,7 +441,7 @@ nav {
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: MyriadPro;
+    font-family: MyriadProRegular;
 }
 
 .menu ul li.current-menu-item > a:before {
@@ -538,11 +532,11 @@ nav {
     transition: all linear 0.3s;
 }
 .multi-purp .menu ul li ul li a {
-    padding: 5px 30px;
+    padding: 5px 28px;
     line-height: 1.75;
 }
 .sticky .menu ul li ul li a {
-    padding: 5px 20px;
+    padding: 5px 28px;
     line-height: 1.75;
     font-size: 16px;
 }
