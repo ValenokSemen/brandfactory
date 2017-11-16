@@ -22,22 +22,42 @@ $(document).ready(function(){
             $('select[name="insurance"]').css('border-color', '#e41919');
             proceed = false;
         }
-        if (!($.isNumeric(tenderid))) {
+        
+        var is_digit_regex = /^[\d\s]*$/;
+
+        if (is_digit_regex.test(tenderid)) {
+            tenderid = tenderid.match(/\d/g).join("");
+        }else{
             $('input[name=tenderid]').css('border-color', '#e41919');
             proceed = false;
         }
-        
-        if (!($.isNumeric(contractprice)) || (contractprice > 100000000000)) {
+
+        if (is_digit_regex.test(contractprice)) {
+            contractprice = contractprice.match(/\d/g).join("");
+            contractprice = parseInt(contractprice);
+            if (contractprice > 100000000000) {
+                $('input[name=contractprice]').css('border-color', '#e41919');
+                proceed = false;
+            }
+        }else{
             $('input[name=contractprice]').css('border-color', '#e41919');
             proceed = false;
         }
+        
 
         if (garant != "") {
-            if (!($.isNumeric(garant)) || (garant > 20000)) {
+            if (is_digit_regex.test(garant)) {
+                garant = garant.match(/\d/g).join("");
+                garant = parseInt(garant);
+                if (garant > 20000) {
+                    $('input[name=garant]').css('border-color', '#e41919');
+                    proceed = false;
+                }
+            }else{
                 $('input[name=garant]').css('border-color', '#e41919');
                 proceed = false;
             }
-        }        
+        }           
 
         if (date == "") {
             $('select[name="date"]').css('border-color', '#e41919');
