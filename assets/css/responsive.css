@@ -63,11 +63,15 @@
         margin: 0 15px;
     }*/
         .multi-purp nav.sticky ul li a {
-        padding: 30px 0px;
+        padding: 0px 0px;
         }
 
     .multi-purp .logo {
         margin-top: 17px;
+    }
+
+    nav.sticky .logo {
+    margin-top: 17px;
     }
 
     .present-block-name {
