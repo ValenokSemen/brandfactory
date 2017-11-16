@@ -70,7 +70,7 @@ $(document).ready(function(){
             proceed = false;
         } ;
         
-        var regExp = /^[А-Я][а-яА-Я\-]{0,}\s[А-Я][а-яА-Я\-]{1,}(\s[А-Я][а-яА-Я\-]{1,})?$/;
+        var regExp = /^[а-яА-Я][а-яА-Я\-]{0,}\s[а-яА-Я][а-яА-Я\-]{1,}(\s[а-яА-Я][а-яА-Я\-]{1,})?$/;
         if (!(name.match(regExp))) {
             $('input[name="name"]').css('border-color', '#e41919');
             proceed = false;
